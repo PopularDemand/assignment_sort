@@ -1,20 +1,19 @@
-def bubble_sort
-  (array.length - 1).times
+def bubble_sort(arr)
+  begin
+    swapped = false
+    swapped = compare(arr, swapped)
+  end until swapped == false
+  arr
 end
 
-def compare
-
+def compare(arr, swapped)
+  (arr.length - 1).times do |i|
+    if arr[i] > arr[i+1]
+      arr[i], arr[i+1] = arr[i+1], arr[i] 
+      swapped = true
+    end
+  end
+  swapped
 end
 
-bubble_sort( [1,3,7,2,5] )
-
-swapped? = false
-
-begin
-  loop compare i i+1
-    out of order, swap
-      swapped? = true
-    not out of order, move on
-end until swapped? = false
-
-swap = false
+p bubble_sort( [1,3,7,2,5] )
